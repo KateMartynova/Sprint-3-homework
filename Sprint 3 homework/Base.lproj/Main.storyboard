@@ -81,8 +81,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="StatsUITextView" destination="PtC-gl-3NQ" id="rEV-P4-mgi"/>
-                        <outlet property="counter" destination="Wrh-LY-ETN" id="cgy-oI-dbu"/>
+                        <outlet property="counterLabel" destination="Wrh-LY-ETN" id="xVt-ss-dzH"/>
+                        <outlet property="statsUITextView" destination="PtC-gl-3NQ" id="PkX-px-MwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

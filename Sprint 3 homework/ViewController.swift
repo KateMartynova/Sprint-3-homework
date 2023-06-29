@@ -8,11 +8,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var StatsUITextView: UITextView!
     
-    var number: Int = 0
+    private var number: Int = 0
     
-    func printMyDate() -> String {
+    @IBOutlet weak private var counterLabel: UILabel!
+    
+    @IBOutlet weak private var statsUITextView: UITextView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    private func printMyDate() -> String {
         let mytime = Date();
         let dateFormatter = DateFormatter();
         dateFormatter.timeStyle = .short
@@ -21,36 +31,27 @@ class ViewController: UIViewController {
     }
     
     
-    @IBOutlet weak var counter: UILabel!
-    
-    @IBAction func counterPlusUIButton(_ sender: Any) {
+    @IBAction private func counterPlusUIButton(_ sender: Any) {
         number += 1
-        counter.text = "Значение счетчика: \(number)"
-        StatsUITextView.text += "\n\(printMyDate()): значение изменено на +1"
+        counterLabel.text = "Значение счетчика: \(number)"
+        statsUITextView.text += "\n\(printMyDate()): значение изменено на +1"
     }
     
-    @IBAction func counterMinusUIButton(_ sender: Any) {
+    @IBAction private func counterMinusUIButton(_ sender: Any) {
         if number > 0 {
             number -= 1
-            StatsUITextView.text += "\n\(printMyDate()): значение изменено на -1"
+            statsUITextView.text += "\n\(printMyDate()): значение изменено на -1"
         } else {
             number = 0
-            StatsUITextView.text += "\n\(printMyDate()): попытка уменьшить значение счётчика ниже 0"
+            statsUITextView.text += "\n\(printMyDate()): попытка уменьшить значение счётчика ниже 0"
         }
-        counter.text = "Значение счетчика: \(number)"
+        counterLabel.text = "Значение счетчика: \(number)"
     }
     
-    @IBAction func counterZeroUIButton(_ sender: Any) {
+    @IBAction private func counterZeroUIButton(_ sender: Any) {
         number = 0
-        counter.text = "Значение счетчика: \(number)"
-        StatsUITextView.text += "\n\(printMyDate()): значение сброшено"
+        counterLabel.text = "Значение счетчика: \(number)"
+        statsUITextView.text += "\n\(printMyDate()): значение сброшено"
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
 }
 
