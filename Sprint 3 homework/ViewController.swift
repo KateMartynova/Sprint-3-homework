@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak private var statsUITextView: UITextView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
